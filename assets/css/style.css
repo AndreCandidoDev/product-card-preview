@@ -34,7 +34,7 @@ h1{
     grid-template-columns: 50% 50%;
     justify-content: center;
     border: 1px solid #F3EAE3;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 15px;
     width: 838px;
     height: 510px;
@@ -44,9 +44,13 @@ h1{
     overflow: hidden;
 }
 
-.imgCol > img{
+.imgCol > img:nth-child(1){
     width: 419px;
     height: 510px;
+}
+
+.imgCol > img:nth-child(2){
+    display: none;
 }
  
 .productDesc{
@@ -103,13 +107,94 @@ button:hover{
 }
 
 @media only screen and (max-width:768px){
-    
+    .container{
+        padding: 80px;
+    }
+
+    .card{
+        width: 600px;
+    }
+
+    .imgCol > img:nth-child(1){
+        width: 300px;
+    }
+
+    .productDescContent{
+        width: 72%;
+        padding-top: 8px;
+    }
 }
 
-@media only screen and (max-width:425px){
+/* continue from here */
+@media only screen and (max-width:430px){
+
+    .container{
+        padding: 0;
+        padding-top: 23px;
+    }
+
+    .card{
+        border-radius: 0px;
+        width: 400px;
+        height: 900px;
+    }
+
+    .imgCol{
+        grid-area: 1 / 1 / 4 / 2;
+        width: 400px;
+        height: 300px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .imgCol > img:nth-child(1){
+        display: none;
+    }
     
+    .imgCol > img:nth-child(2){
+        display: block;
+        width: 400px;
+        height: 300px;
+    }
+
+    .productDesc{
+        width: 400px;
+        height: 450px;
+        grid-area: 3 / 1 / 4 / 2;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .productDescContent{
+        width: 82%;
+    }
+
+    .priceGrid{
+        grid-template-columns: 40% 40%;
+        gap: 15px;
+    }
 }
 
-@media only screen and (max-width:375px){
+@media only screen and (max-width:380px){
+    .card{
+        width: 300px;
+    }
 
+    .imgCol{
+        width: 300px;
+    }
+
+    .imgCol > img:nth-child(2){
+        width: 300px;
+    }
+
+    .productDesc{
+        width: 300px;
+    }
+
+    .productDescContent{
+        width: 92%;
+    }
+
+    .priceGrid{
+        grid-template-columns: 45% 40%;
+    }
 }
